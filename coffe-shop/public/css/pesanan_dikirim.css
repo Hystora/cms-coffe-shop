@@ -1,0 +1,481 @@
+/* reset default */
+* {
+    padding: 0; /* Menghapus padding default pada semua elemen */
+    margin: 0; /* Menghapus margin default pada semua elemen */
+    box-sizing: border-box; /* Mengatur box-sizing agar padding dan border tidak mempengaruhi ukuran elemen */
+    font-family: "Sofadi One", system-ui; /* Menetapkan font default untuk seluruh halaman */
+}
+
+body {
+    background-color: #EACDBD; /* Menetapkan warna latar belakang untuk body */
+    color: #333; /* Menetapkan warna teks untuk body */
+}
+
+/* header/navbar */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 5;
+  }
+  
+  .header img {
+    position: relative;
+    margin-left: 10px;
+  }
+  
+  .header {
+      transition: .3s all;
+  }
+  
+  .header.sticky {
+      backdrop-filter: blur(60px);
+      box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+      border: 0px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      height: 60px;
+  }
+  
+  #logo {
+    margin-left: 30px; /* Atur nilai margin-left sesuai kebutuhan */
+  }
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  /* Href */
+  /* Mengatur warna link normal */
+  a {
+    color: inherit;  /* Warna mengikuti warna elemen induknya (default) */
+    text-decoration: none;  /* Menghilangkan garis bawah */
+  }
+  
+  /* Mengatur warna link saat di-hover (saat kursor di atas link) */
+  a:hover {
+    color: #504141;  /* Mengatur warna tetap sama saat hover */
+    text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+  }
+  
+  /* Mengatur warna link saat ditekan atau aktif (active state) */
+  a:active {
+    color: inherit;  /* Mengatur warna tetap sama saat ditekan */
+    text-decoration: none;  /* Menghilangkan garis bawah saat ditekan */
+  }
+  
+  /* Mengatur warna link saat berada di dalam focus (misalnya setelah dipilih dengan keyboard) */
+  a:focus {
+    color: inherit;  /* Mengatur warna tetap sama saat fokus */
+    text-decoration: none;  /* Menghilangkan garis bawah saat fokus */
+  }
+  
+  
+  .header ul {
+    display: flex;
+    list-style: none;
+    gap: 90px;
+  }
+  
+  .header li {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .box {
+    padding-top: -50px;
+    text-align: justify;
+    display: flex;
+    gap: 90px;
+    margin-right: 10px;
+  }
+  /*btn pencarian*/
+  
+  /*GRUP ICON*/
+  
+  /* Styling untuk grup ikon (pencarian, keranjang, profil) */
+  --------------------------------------------------------------------
+  /* Default Style for Icons (Keranjang, Profil) */
+  #keranjang-icon, #profile-icon {
+  color: #000000; /* Warna default */
+  transition: color 0.3s ease;
+  }
+  
+  /* Warna ketika navbar sticky */
+  .sticky #keranjang-icon, .sticky #profile-icon {
+  color: white; /* Warna ketika di-scroll */
+  }
+  
+  .icons-group {
+  padding: 0px;
+  display: flex;
+  align-items: center; /* Menjaga elemen sejajar secara vertikal */
+  gap: 50px;
+  position: relative;  /* Mengaktifkan posisi relatif untuk elemen ini */
+  top: -15px;
+  z-index: 8; /* Pastikan grup ikon berada di atas elemen lain */
+  }
+  
+  /* Styling untuk tombol pencarian */
+  .trigger_search {
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  width: 40px;  /* Menyelaraskan ukuran tombol dengan elemen lainnya */
+  height: 40px; /* Membuat tombol berbentuk bulat dan seukuran dengan elemen lainnya */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  cursor: pointer;
+  font-size: 20px; /* Ukuran ikon */
+  z-index: 6;
+  }
+  
+  /* Styling untuk input pencarian */
+  .input {
+  border-radius: 30px;
+  border: 0;
+  outline: 0;
+  transition: 0.25s ease-in-out all; /* Pastikan animasi berlaku pada semua perubahan */
+  width: 0;
+  padding: 0;
+  margin-right: -25px;
+  height: 40px; /* Menyelaraskan tinggi dengan elemen lainnya */
+  position: absolute; /* Menggunakan posisi absolute */
+  left: 50%; /* Menyelaraskan input ke tengah secara horizontal */
+  transform: translateX(-40%); /* Menyelaraskan ke tengah secara horizontal */
+  }
+  
+  /* Ketika kolom pencarian terbuka */
+  .input-open {
+  width: 300px; /* Lebar kolom pencarian ketika terbuka */
+  padding: 0 50px;
+  margin-right: 10px;
+  font-size: 20px;
+  position: absolute; /* Memastikan input berada di bawah navbar */
+  top: 100%; /* Menempatkan input di bawah navbar */
+  left: 20%; /* Memastikan input tetap di tengah */
+  transform: translateX(-50%); /* Menyelaraskan input ke tengah */
+  z-index: 10; /* Memastikan input berada di atas elemen lain */
+  }
+  
+  /* Ketika kolom pencarian ditutup (input ditutup kembali) */
+  .input-close {
+  width: 0; /* Kembalikan lebar menjadi 0 */
+  padding: 0;
+  margin-right: -25px; /* Kembalikan margin */
+  font-size: 0; /* Atur font-size menjadi 0 ketika ditutup */
+  top: 100%; /* Tetap berada di bawah navbar */
+  left: 50%; /* Tetap di tengah */
+  transform: translateX(-50%); /* Pastikan transformasi tetap konsisten */
+  }
+  
+  /* Transisi untuk animasi yang halus */
+  .input {
+  transition: width 0.3s ease, top 0.3s ease, left 0.3s ease, transform 0.3s ease;
+  }
+  
+  
+  /* Styling untuk ikon keranjang dan profil */
+  /* Menghilangkan styling tombol */
+  .btn-light {
+    background: transparent; /* Menghapus background */
+    border: none; /* Menghapus border */
+    padding: 0; /* Menghapus padding */
+    cursor: pointer; /* Menjaga cursor sebagai pointer */
+  }
+  
+  /* Menghilangkan link styling */
+  a.keranjang {
+    text-decoration: none; /* Menghilangkan underline pada link */
+    color: inherit; /* Menjaga warna tetap sesuai warna default (biasanya hitam) */
+  }
+  
+  /* Styling untuk ikon keranjang */
+  #keranjang-icon {
+    font-size: 24px; /* Mengatur ukuran ikon */
+    color: #000; /* Menetapkan warna ikon */
+  }
+  
+  a.keranjang :hover {
+    /* Mengatur warna link saat di-hover (saat kursor di atas link) */
+   color: #504141;  /* Mengatur warna tetap sama saat hover */
+    text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+  }
+  
+  /* drop down button */
+  .admin-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: transparent;
+  }
+  .admin-button {
+  display: flex;
+  align-items: center;
+  background-color: #d9b99b;
+  border: 2px solid #4A3A3A;
+  border-radius: 25px;
+  padding: 5px 15px;
+  cursor: pointer;
+  }
+  .admin-button span {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #000;
+  }
+  .admin-button .circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  }
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  }
+  
+  /* Default hidden state for the dropdown content */
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #D3B8A0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  z-index: 1;
+  left: -50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-out, visibility 1s ease-out; /* Make it smooth */
+  }
+  
+  .dropdown-content a {
+  color: black;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  }
+  .dropdown-content a:hover {
+  background-color: #ddd;
+  }
+  
+  /* The styles when the dropdown is shown (handled via JavaScript) */
+  .dropdown.active .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  }
+  
+  /* navbar end */
+      
+      .upper {
+        height: -10vh;
+        background: transparent;
+        filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+      }
+
+/* Main Content */
+.profile-content { /* Kontainer utama profil menggunakan Flexbox */
+    display: flex; /* Menggunakan Flexbox untuk menata elemen dalam baris */
+    gap: 30px; /* Menambahkan jarak antar elemen */
+    padding: 20px; /* Memberikan padding di dalam kontainer */
+    margin-top: 30px; /* Memberikan jarak atas dari elemen sebelumnya */
+}
+
+.profile-content form input { /* Pengaturan untuk input dalam form */
+    padding: 10px; /* Memberikan padding di dalam input */
+    border: 1px solid #d1b7a0; /* Menambahkan border dengan warna */
+    border-radius: 5px; /* Membuat sudut border melengkung */
+    width: 500px; /* Menentukan lebar input */
+    height: 25px; /* Menentukan tinggi input */
+}
+
+/* Left Content */
+.left-content { /* Pengaturan untuk konten kiri */
+    width: 25%; /* Menentukan lebar konten kiri */
+    padding: 20px; /* Memberikan padding di dalam konten kiri */
+    border-radius: 10px; /* Membuat sudut konten melengkung */
+    justify-content: flex-start; /* Menyusun elemen di kiri */
+    align-items: flex-start; /* Menyusun elemen anak di kiri */
+}
+
+.left-content img.profile-picture { /* Pengaturan untuk gambar profil */
+    display: block; /* Menggunakan display block agar gambar menjadi elemen block */
+    margin: 0 auto 10px; /* Menyusun gambar di tengah dengan jarak bawah 10px */
+    width: 60px; /* Menentukan lebar gambar */
+    height: 60px; /* Menentukan tinggi gambar */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin-bottom: 5px; /* Memberikan jarak bawah */
+}
+
+.left-content p { /* Pengaturan untuk teks dalam konten kiri */
+    text-align: center; /* Menyusun teks di tengah */
+    margin: 10px 0; /* Memberikan jarak atas dan bawah */
+}
+
+/* Divider (Pembatas) */
+.divider { /* Pengaturan untuk garis pembatas */
+    border: none; /* Menghilangkan border standar */
+    border-top: 2px solid #1E1E1E; /* Menambahkan garis atas */
+    margin: 15px 0; /* Menambahkan jarak atas dan bawah */
+    width: 80%; /* Menentukan lebar garis */
+    margin-left: auto; /* Menyusun garis ke kiri */
+    margin-right: auto; /* Menyusun garis ke kanan */
+}
+
+/* Link dalam Left Content */
+.left-content a { /* Pengaturan untuk link dalam konten kiri */
+    font-weight: bold; /* Membuat teks link menjadi tebal */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: #1E1E1E; /* Menentukan warna teks link */
+}
+
+.left-content ul { /* Pengaturan untuk elemen list dalam konten kiri */
+    padding: 0; /* Menghilangkan padding default */
+    list-style: none; /* Menghilangkan bullet pada list */
+}
+
+.left-content ul li { /* Pengaturan untuk item list */
+    margin: 10px 0; /* Memberikan jarak antara item list */
+}
+
+.left-content ul li a { /* Pengaturan untuk link dalam daftar */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: black; /* Menentukan warna teks link */
+    font-weight: normal; /* Membuat teks link menjadi normal */
+}
+
+.left-content a.bold-text { /* Pengaturan untuk link dengan kelas bold-text */
+    font-weight: bold; /* Membuat teks link menjadi tebal */
+}
+
+/* Right Content */
+.right-content { /* Pengaturan untuk konten kanan */
+    width: 65%; /* Menentukan lebar konten kanan */
+    background-color: #E3C7B9; /* Menentukan warna latar belakang */
+    padding: 20px; /* Memberikan padding di dalam konten kanan */
+    border-radius: 10px; /* Membuat sudut konten melengkung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Memberikan bayangan pada konten kanan */
+}
+
+/* Tabs */
+.tabs { /* Pengaturan untuk tab navigasi */
+    display: flex; /* Menggunakan Flexbox untuk menata tab */
+    justify-content: space-around; /* Menyusun tab secara merata */
+    margin-bottom: 10px; /* Memberikan jarak bawah */
+}
+
+.tabs button { /* Pengaturan untuk tombol tab */
+    background-color: #E3C7B9; /* Menentukan warna latar belakang tombol */
+    border: none; /* Menghilangkan border tombol */
+    padding: 10px 20px; /* Memberikan padding dalam tombol */
+    border-radius: 15px; /* Membuat sudut tombol melengkung */
+    cursor: pointer; /* Menambahkan cursor pointer saat hover */
+    font-weight: bold; /* Membuat teks tombol menjadi tebal */
+}
+
+.tabs button.active { /* Pengaturan untuk tombol tab yang aktif */
+    background-color: #E3C7B9; /* Menentukan warna latar belakang aktif */
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4); /* Memberikan bayangan dalam tombol aktif */
+}
+
+/* Right Divider */
+.right-divider { /* Pengaturan untuk garis pembatas kanan */
+    border: none; /* Menghilangkan border standar */
+    border-top: 2px solid #1E1E1E; /* Menambahkan garis atas */
+    margin: 15px 0; /* Menambahkan jarak atas dan bawah */
+    width: 100%; /* Menentukan lebar garis */
+    margin-left: auto; /* Menyusun garis ke kiri */
+    margin-right: auto; /* Menyusun garis ke kanan */
+}
+
+/* Order List */
+.order-list { /* Pengaturan untuk daftar pesanan */
+    margin-top: 10px; /* Memberikan jarak atas */
+}
+
+/* Order Item */
+.order-item { /* Pengaturan untuk item pesanan */
+    display: flex; /* Menggunakan Flexbox untuk menata item */
+    align-items: center; /* Menyusun elemen di tengah secara vertikal */
+    padding: 15px; /* Memberikan padding dalam item pesanan */
+    border-radius: 10px; /* Membuat sudut item pesanan melengkung */
+    margin-bottom: 15px; /* Memberikan jarak bawah */
+}
+
+/* Order Image */
+.order-image { /* Pengaturan untuk gambar pesanan */
+    display: flex; /* Menggunakan Flexbox untuk menata gambar */
+    justify-content: center; /* Menyusun gambar di tengah secara horizontal */
+    background-color: #CCB4A7; /* Menentukan warna latar belakang gambar */
+    border-radius: 5px; /* Membuat sudut gambar melengkung */
+    width: 80px; /* Menentukan lebar gambar */
+    height: 80px; /* Menentukan tinggi gambar */
+    margin-right: 15px; /* Memberikan jarak kanan */
+    overflow: hidden; /* Menyembunyikan bagian gambar yang keluar */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3); /* Memberikan bayangan pada gambar */
+}
+
+.order-image img { /* Pengaturan untuk gambar dalam kotak gambar */
+    max-width: 100%; /* Mengatur lebar gambar agar tidak melebihi lebar kotak */
+    max-height: 100%; /* Mengatur tinggi gambar agar tidak melebihi tinggi kotak */
+    object-fit: contain; /* Memastikan gambar tetap proporsional */
+}
+
+/* Order Details */
+.order-details { /* Pengaturan untuk detail pesanan */
+    flex-grow: 1; /* Membuat detail pesanan mengambil sisa ruang */
+}
+
+/* Order Title */
+.order-title { /* Pengaturan untuk judul pesanan */
+    font-weight: bold; /* Membuat teks judul menjadi tebal */
+    margin-bottom: 5px; /* Memberikan jarak bawah */
+}
+
+/* Order Status */
+.order-status { /* Pengaturan untuk status pesanan */
+    color: rgb(94, 94, 94); /* Menentukan warna teks status */
+    margin-bottom: 10px; /* Memberikan jarak bawah */
+}
+
+/* Order Total */
+.order-total { /* Pengaturan untuk total pesanan */
+    font-weight: bold; /* Membuat teks total menjadi tebal */
+    margin-bottom: 10px; /* Memberikan jarak bawah */
+}
+
+.order-total span { /* Pengaturan untuk total pesanan dalam span */
+    color: #1E1E1E; /* Menentukan warna teks */
+}
+
+/* Responsif (untuk layar kecil) */
+@media screen and (max-width: 768px) { /* Pengaturan untuk layar kecil */
+    .container { /* Pengaturan untuk kontainer utama */
+        flex-direction: column; /* Mengubah layout menjadi kolom */
+    }
+
+    .left-content, /* Konten kiri */
+    .right-content { /* Konten kanan */
+        width: 100%; /* Mengatur lebar menjadi 100% */
+    }
+}
+
+/* Footer */
+footer { /* Pengaturan untuk footer */
+    text-align: center; /* Menyusun teks di tengah */
+    margin-top: auto; /* Menyusun footer di bawah */
+    padding: 15px 0; /* Memberikan padding dalam footer */
+    background-color: transparent; /* Menentukan warna latar belakang transparan */
+    font-size: 0.9rem; /* Menentukan ukuran font */
+}

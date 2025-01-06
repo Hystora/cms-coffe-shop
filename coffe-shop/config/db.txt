@@ -1,0 +1,1 @@
+CREATE DATABASE coffee_shop_db;

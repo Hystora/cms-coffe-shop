@@ -1,0 +1,536 @@
+/* reset default */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sofadi One", system-ui;
+  }
+  
+  body {
+    background-color: #EACDBD   ;
+    color: #333;
+  }
+  
+  /* header/navbar */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  z-index: 5;
+}
+
+.header img {
+  position: relative;
+  margin-left: 10px;
+}
+
+.header {
+    transition: .3s all;
+}
+
+.header.sticky {
+    backdrop-filter: blur(60px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    height: 60px;
+}
+
+#logo {
+  margin-left: 30px; /* Atur nilai margin-left sesuai kebutuhan */
+}
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Href */
+/* Mengatur warna link normal */
+a {
+  color: inherit;  /* Warna mengikuti warna elemen induknya (default) */
+  text-decoration: none;  /* Menghilangkan garis bawah */
+}
+
+/* Mengatur warna link saat di-hover (saat kursor di atas link) */
+a:hover {
+  color: #504141;  /* Mengatur warna tetap sama saat hover */
+  text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+}
+
+/* Mengatur warna link saat ditekan atau aktif (active state) */
+a:active {
+  color: inherit;  /* Mengatur warna tetap sama saat ditekan */
+  text-decoration: none;  /* Menghilangkan garis bawah saat ditekan */
+}
+
+/* Mengatur warna link saat berada di dalam focus (misalnya setelah dipilih dengan keyboard) */
+a:focus {
+  color: inherit;  /* Mengatur warna tetap sama saat fokus */
+  text-decoration: none;  /* Menghilangkan garis bawah saat fokus */
+}
+
+
+.header ul {
+  display: flex;
+  list-style: none;
+  gap: 90px;
+}
+
+.header li {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.box {
+  padding-top: -50px;
+  text-align: justify;
+  display: flex;
+  gap: 90px;
+  margin-right: 10px;
+}
+/*btn pencarian*/
+
+/*GRUP ICON*/
+
+/* Styling untuk grup ikon (pencarian, keranjang, profil) */
+--------------------------------------------------------------------
+/* Default Style for Icons (Keranjang, Profil) */
+#keranjang-icon, #profile-icon {
+color: #000000; /* Warna default */
+transition: color 0.3s ease;
+}
+
+/* Warna ketika navbar sticky */
+.sticky #keranjang-icon, .sticky #profile-icon {
+color: white; /* Warna ketika di-scroll */
+}
+
+.icons-group {
+padding: 0px;
+display: flex;
+align-items: center; /* Menjaga elemen sejajar secara vertikal */
+gap: 50px;
+position: relative;  /* Mengaktifkan posisi relatif untuk elemen ini */
+top: -15px;
+z-index: 8; /* Pastikan grup ikon berada di atas elemen lain */
+}
+
+/* Styling untuk tombol pencarian */
+.trigger_search {
+background: transparent;
+border: 0;
+border-radius: 50%;
+width: 40px;  /* Menyelaraskan ukuran tombol dengan elemen lainnya */
+height: 40px; /* Membuat tombol berbentuk bulat dan seukuran dengan elemen lainnya */
+display: flex;
+justify-content: center;
+align-items: center;
+outline: 0;
+cursor: pointer;
+font-size: 20px; /* Ukuran ikon */
+z-index: 6;
+}
+
+/* Styling untuk input pencarian */
+.input {
+border-radius: 30px;
+border: 0;
+outline: 0;
+transition: 0.25s ease-in-out all; /* Pastikan animasi berlaku pada semua perubahan */
+width: 0;
+padding: 0;
+margin-right: -25px;
+height: 40px; /* Menyelaraskan tinggi dengan elemen lainnya */
+position: absolute; /* Menggunakan posisi absolute */
+left: 50%; /* Menyelaraskan input ke tengah secara horizontal */
+transform: translateX(-40%); /* Menyelaraskan ke tengah secara horizontal */
+}
+
+/* Ketika kolom pencarian terbuka */
+.input-open {
+width: 300px; /* Lebar kolom pencarian ketika terbuka */
+padding: 0 50px;
+margin-right: 10px;
+font-size: 20px;
+position: absolute; /* Memastikan input berada di bawah navbar */
+top: 100%; /* Menempatkan input di bawah navbar */
+left: 20%; /* Memastikan input tetap di tengah */
+transform: translateX(-50%); /* Menyelaraskan input ke tengah */
+z-index: 10; /* Memastikan input berada di atas elemen lain */
+}
+
+/* Ketika kolom pencarian ditutup (input ditutup kembali) */
+.input-close {
+width: 0; /* Kembalikan lebar menjadi 0 */
+padding: 0;
+margin-right: -25px; /* Kembalikan margin */
+font-size: 0; /* Atur font-size menjadi 0 ketika ditutup */
+top: 100%; /* Tetap berada di bawah navbar */
+left: 50%; /* Tetap di tengah */
+transform: translateX(-50%); /* Pastikan transformasi tetap konsisten */
+}
+
+/* Transisi untuk animasi yang halus */
+.input {
+transition: width 0.3s ease, top 0.3s ease, left 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Styling untuk ikon keranjang dan profil */
+/* Menghilangkan styling tombol */
+.btn-light {
+  background: transparent; /* Menghapus background */
+  border: none; /* Menghapus border */
+  padding: 0; /* Menghapus padding */
+  cursor: pointer; /* Menjaga cursor sebagai pointer */
+}
+
+/* Menghilangkan link styling */
+a.keranjang {
+  text-decoration: none; /* Menghilangkan underline pada link */
+  color: inherit; /* Menjaga warna tetap sesuai warna default (biasanya hitam) */
+}
+
+/* Styling untuk ikon keranjang */
+#keranjang-icon {
+  font-size: 24px; /* Mengatur ukuran ikon */
+  color: #000; /* Menetapkan warna ikon */
+}
+
+a.keranjang :hover {
+  /* Mengatur warna link saat di-hover (saat kursor di atas link) */
+ color: #504141;  /* Mengatur warna tetap sama saat hover */
+  text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+
+
+}
+
+/* drop down button */
+.admin-container {
+display: flex;
+justify-content: center;
+padding: 10px;
+background-color: transparent;
+}
+.admin-button {
+display: flex;
+align-items: center;
+background-color: #d9b99b;
+border: 2px solid #4A3A3A;
+border-radius: 25px;
+padding: 5px 15px;
+cursor: pointer;
+}
+.admin-button span {
+margin-left: 10px;
+font-size: 14px;
+color: #000;
+}
+.admin-button .circle {
+width: 20px;
+height: 20px;
+border: 2px solid #000;
+border-radius: 50%;
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Default hidden state for the dropdown content */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #D3B8A0;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 10px;
+border-radius: 10px;
+margin-top: 10px;
+z-index: 1;
+left: -50px;
+opacity: 0;
+visibility: hidden;
+transition: opacity 1s ease-out, visibility 1s ease-out; /* Make it smooth */
+}
+
+.dropdown-content a {
+color: black;
+padding: 8px 0;
+text-decoration: none;
+display: block;
+font-size: 14px;
+}
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+/* The styles when the dropdown is shown (handled via JavaScript) */
+.dropdown.active .dropdown-content {
+display: block;
+opacity: 1;
+visibility: visible;
+}
+
+
+/* navbar end */
+    
+    .upper {
+      height: -10vh;
+      background: transparent;
+      filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+    }
+  /* bagian bg image */
+  
+  .curve {
+    background-image: url(https://mediaindonesia.com/cdn-cgi/image/width=800,quality=80/https://asset.mediaindonesia.com/news/2023/09/8a5e048b398c2ce7e0cf87d0f8569b33.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  svg {
+    display: block;
+  }
+  
+  .upper {
+    height: -10vh;
+    background: transparent;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+  }
+  
+  
+  .hero h1 {
+      padding-left: 30px;
+      padding-bottom: 5px;
+      font-size: 100px;
+      color: white;
+  }
+
+  .btn {
+    border: none;
+    border-radius: 20px;
+    padding: 1px 0;
+    margin-left: 30px;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+}
+  
+  .btn a {
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+  }
+  
+    /* category */
+
+    
+    .category {
+        text-align: center;
+        padding-bottom: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .category h2 {
+      font-size: 50px;
+      padding-bottom: 6px;
+    }
+    
+    .category p {
+        font-size: 40px;
+        font-family:'Poppins', sans-serif;
+      }
+    
+    .card {
+      padding: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      z-index: 4;
+    }
+    
+    .card img {
+      border-radius: 50px; /* Menjaga sudut gambar tetap melengkung */
+    box-shadow: -10px 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga gambar tetap proporsional */
+    }
+    
+    .image {
+      width: 450px; /* Ukuran lebar tetap */
+    height: 300px; /* Ukuran tinggi tetap */
+    position: relative;
+    }
+    
+    .category img {
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
+    .content {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.507);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: 0.5s;
+      border-radius: 50px;
+      }
+    
+    .content a {
+      text-decoration: none;
+      background-color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 40px;
+      font-weight: bold;
+      color: black;
+      margin-top: 5%;
+    }
+    
+    .card:hover {
+      cursor: pointer;
+    }
+    
+    .content:hover {
+      opacity: 1;
+      color: white;
+      font-size: 25px;
+    }
+/* PILIHAN KOPI */
+/* Mengatur style untuk container utama Pilihan Kopi */
+.pilihan-kopi-container {
+  max-width: 2000px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* Mengatur style untuk judul */
+.pilihan-kopi-container h2 {
+  font-size: 50px;
+  padding-bottom: 6px;
+}
+
+.pilihan-kopi-container p {
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Mengatur style untuk card */
+.pilihan-kopi-cards {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  z-index: 4;
+}
+
+/* Mengatur style untuk image container (untuk memastikan card terlihat dengan benar) */
+.pilihan-kopi-image {
+  width: 450px; /* Ukuran lebar tetap */
+  height: 300px; /* Ukuran tinggi tetap */
+  position: relative;
+  overflow: hidden; /* Agar gambar tidak meluber keluar */
+  border-radius: 50px;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada card */
+}
+
+/* Mengatur gambar pada card */
+.pilihan-kopi-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menjaga gambar tetap proporsional */
+}
+
+/* Mengatur style untuk konten card */
+.pilihan-kopi-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.507); /* Latar belakang semi-transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Animasi saat hover */
+  border-radius: 50px;
+}
+
+/* Mengatur tampilan tombol dan teks dalam konten */
+.pilihan-kopi-content h1 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.pilihan-kopi-likes {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.pilihan-kopi-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.pilihan-kopi-buy-button {
+  background-color: #ff7f00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.pilihan-kopi-buy-button:hover {
+  background-color: #e76f00; /* Menambahkan efek hover pada tombol */
+}
+
+/* Hover effect: ketika card di-hover, tampilkan konten */
+.pilihan-kopi-image:hover .pilihan-kopi-content {
+  opacity: 1;
+  color: white;
+}
+
+/* Menambahkan efek cursor pada card item */
+.pilihan-kopi-image:hover {
+  cursor: pointer;
+}
+
+.footer {
+  position: relative;
+  margin-top: -5em;
+  padding: 20px;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+

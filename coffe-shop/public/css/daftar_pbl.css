@@ -1,0 +1,111 @@
+/* Mengatur box model dan menghapus margin dan padding untuk semua elemen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur tampilan dasar untuk body dan html */
+body,
+html {
+    height: 100%; /* Membuat tinggi halaman penuh */
+    font-family: Arial, sans-serif; /* Mengatur font default */
+    background-color: #EACDBD; /* Warna latar belakang lembut */
+}
+
+/* Overlay - Membuat lapisan di atas seluruh halaman */
+.overlay {
+    background-color: #EACDBD; /* Warna latar belakang overlay */
+    position: fixed; /* Posisi tetap di atas halaman */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mengatur lebar overlay */
+    height: 100%; /* Mengatur tinggi overlay */
+    display: flex; /* Menggunakan flexbox untuk memusatkan konten */
+    justify-content: center; /* Menyusun konten secara horizontal di tengah */
+    align-items: center; /* Menyusun konten secara vertikal di tengah */
+}
+
+/* Form Container - Tempat untuk form input */
+.form-container {
+    background-color: #514444;
+    width: 90%; /* Lebar 90% dari layar */
+    max-width: 400px; /* Lebar maksimum 400px */
+    padding: 30px; /* Padding di dalam container */
+    border-radius: 12px; /* Sudut melengkung pada container */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    text-align: center; /* Menyusun teks di tengah */
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+    transform: scale(0.8); /* Mengubah ukuran tampilan menjadi lebih kecil */
+}
+
+/* Judul form */
+.form-container h2 {
+    margin-bottom: 20px; /* Jarak bawah judul */
+    color: #fff; /* Warna teks */
+    font-size: 24px; /* Ukuran font judul */
+    font-weight: bold; /* Membuat font tebal */
+}
+
+/* Label untuk input */
+label {
+    display: block; /* Membuat label menjadi blok */
+    text-align: left; /* Menyusun teks label ke kiri */
+    font-size: 14px; /* Ukuran font label */
+    font-weight: bold; /* Membuat font label tebal */
+    margin-top: 10px; /* Jarak atas label */
+    color: #fff; /* Warna teks label */
+}
+
+/* Input - Tempat untuk mengetikkan teks */
+.input-container input {
+    width: 100%; /* Lebar input 100% dari container */
+    padding: 12px; /* Padding di dalam input */
+    margin-top: 5px; /* Jarak atas input */
+    margin-bottom: 15px; /* Jarak bawah input */
+    border: 1px solid #D2B5A5; /* Warna border input */
+    border-radius: 10px; /* Sudut melengkung pada input */
+    font-size: 14px; /* Ukuran font dalam input */
+    background-color: #D9D9D9; /* Warna latar belakang input */
+}
+
+/* Tombol kirim form */
+button {
+    width: 100%; /* Lebar tombol 100% dari container */
+    padding: 12px; /* Padding di dalam tombol */
+    background-color: #D9D9D8; /* Warna latar belakang tombol */
+    color: #1e1e1e; /* Warna teks tombol */
+    font-weight: bold; /* Membuat teks tombol tebal */
+    border: none; /* Menghapus border default */
+    border-radius: 6px; /* Sudut melengkung pada tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    cursor: pointer; /* Menampilkan kursor pointer saat hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan pada tombol */
+    transition: background-color 0.3s, transform 0.2s; /* Efek transisi pada tombol */
+    margin-top: 20px; /* Jarak atas tombol */
+}
+
+/* Efek hover pada tombol */
+button:hover {
+    background-color: #8d6e5e; /* Warna latar belakang saat hover */
+    transform: translateY(-2px); /* Efek tombol terangkat saat hover */
+}
+
+/* Tautan registrasi */
+.register-link {
+    margin-top: 20px; /* Jarak atas tautan */
+    font-size: 14px; /* Ukuran font tautan */
+    color: #fff; /* Warna teks tautan */
+}
+
+/* Styling untuk tautan dalam register-link */
+.register-link a {
+    color: #fff; /* Warna teks tautan */
+    font-weight: bold; /* Membuat font tautan tebal */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+}
+
+/* Efek hover pada tautan */
+.register-link a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}

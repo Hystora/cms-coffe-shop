@@ -1,0 +1,82 @@
+/* Overlay - Menutupi seluruh halaman */
+.overlay {
+    background-color: #EACDBD; /* Warna latar belakang overlay */
+    position: fixed; /* Menempatkan overlay di posisi tetap */
+    top: 0; /* Menempatkan overlay di bagian atas */
+    left: 0; /* Menempatkan overlay di sisi kiri */
+    width: 100%; /* Menutupi seluruh lebar halaman */
+    height: 100%; /* Menutupi seluruh tinggi halaman */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Menyusun elemen secara horizontal di tengah */
+    align-items: center; /* Menyusun elemen secara vertikal di tengah */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+}
+
+/* Form Container - Mengatur form di dalam overlay */
+.form-container {
+    width: 400px; /* Lebar container form */
+    padding: 30px; /* Memberikan jarak dalam form */
+    background-color: #EACDBD; /* Warna latar belakang container */
+    border-radius: 12px; /* Membuat sudut form membulat */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan di sekitar form */
+    backdrop-filter: blur(10px); /* Efek blur di belakang form */
+    text-align: center; /* Menyusun teks di tengah */
+}
+
+/* Heading dalam form */
+.form-container h2 {
+    margin-bottom: 20px; /* Jarak bawah */
+    color: #1E1E1E; /* Warna teks */
+    margin-bottom: 50px; /* Jarak bawah tambahan */
+}
+
+/* Paragraf dalam form */
+.form-container p {
+    margin-bottom: 40px; /* Jarak bawah */
+    color: #1E1E1E; /* Warna teks */
+}
+
+/* Label input */
+label {
+    display: block; /* Menampilkan label sebagai block element */
+    text-align: left; /* Menyusun teks ke kiri */
+    font-size: 12px; /* Ukuran font label */
+    font-weight: bold; /* Menebalkan font */
+    margin-top: 10px; /* Jarak atas */
+    color: #1E1E1E; /* Warna teks label */
+}
+
+/* Input untuk kata sandi */
+input[type="password"] {
+    width: 100%; /* Lebar input sesuai lebar container */
+    padding: 10px; /* Jarak dalam input */
+    margin-top: 5px; /* Jarak atas */
+    margin-bottom: 20px; /* Jarak bawah */
+    border: 1px solid #ccc; /* Border input */
+    border-radius: 10px; /* Membulatkan sudut input */
+    background-color: #D9D9D9; /* Warna latar belakang input */
+    box-sizing: border-box; /* Menghitung padding dan border dalam lebar */
+    font-size: 14px; /* Ukuran font input */
+}
+
+/* Tombol konfirmasi */
+button {
+    width: 100%; /* Lebar tombol sesuai lebar container */
+    padding: 12px; /* Jarak dalam tombol */
+    background-color: #D9D9D9; /* Warna latar belakang tombol */
+    font-weight: bold; /* Menebalkan teks tombol */
+    color: #1E1E1E; /* Warna teks tombol */
+    border: none; /* Menghapus border tombol */
+    border-radius: 6px; /* Membulatkan sudut tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    cursor: pointer; /* Menambahkan kursor pointer saat hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan tombol */
+    transition: background-color 0.3s, transform 0.2s; /* Efek transisi untuk hover */
+    margin-top: 20px; /* Jarak atas tombol */
+}
+
+/* Efek saat hover pada tombol */
+button:hover {
+    background-color: #8d6e5e; /* Mengubah warna latar belakang saat hover */
+    transform: translateY(-2px); /* Efek mengangkat tombol saat hover */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL</title>
+    <link rel="stylesheet" href="public/css/daftar_pbl.css"> <!-- Menghubungkan file CSS -->
+</head>
+<body>
+    <!-- Overlay yang menutupi halaman -->
+    <div class="overlay">
+        <!-- Formulir pendaftaran -->
+        <div class="form-container">
+            <h2>Daftar Disini</h2> <!-- Judul formulir -->
+            <form action="src/controllers/register.php" method="post">
+                <div class="input-container">
+                    <!-- Input untuk Nama Pengguna -->
+                    <label for="username">Nama Pengguna</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan nama pengguna" required>
+
+                    <!-- Input untuk Kata Sandi -->
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+
+                    <!-- Input untuk Alamat -->
+                    <label for="alamat">Alamat</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat" required>
+
+                    <!-- Input untuk Nomor Ponsel -->
+                    <label for="handphone">Nomor Ponsel</label>
+                    <input type="tel" id="handphone" name="handphone" placeholder="Masukkan nomor ponsel anda" required>
+
+                    <!-- Input untuk Email -->
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan alamat email anda" required>
+
+                    <!-- Tombol untuk mengirimkan formulir -->
+                    <button type="submit">Daftar</button>
+                </div>
+
+                <!-- Tautan untuk pengguna yang sudah punya akun -->
+                <p class="register-link">Sudah punya akun? <a href="masuk_pbl.html">Masuk</a></p>
+            </form>
+        </div>
+    </div> 
+    <script src="public/js/daftar_pbl.js"></script> <!-- Link ke file JavaScript -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+public/: Folder ini berisi file-file yang bersifat publik, seperti CSS, JavaScript, dan gambar.
+    css/: Folder untuk file CSS.
+    styles.css: File CSS untuk gaya tampilan aplikasi.
+    js/: Folder untuk file JavaScript (jika diperlukan di masa mendatang).
+    images/: Folder untuk menyimpan gambar (jika diperlukan di masa mendatang).
+
+src/: Folder ini berisi logika aplikasi dan struktur MVC (Model-View-Controller).
+    controllers/: Folder untuk file PHP yang mengontrol logika aplikasi.
+    register.php: File PHP yang menghandle proses registrasi pengguna.
+    models/: Folder untuk file PHP yang berhubungan dengan model data (belum diisi, tapi bisa digunakan untuk file yang menghubungkan ke database).
+    views/: Folder untuk file tampilan (HTML), bisa digunakan jika kamu memisahkan tampilan dari logika (belum diisi, tapi bisa digunakan untuk file HTML jika diperlukan).
+    routes/: Folder untuk mengatur rute aplikasi (belum diisi, tapi bisa digunakan untuk file routing jika diperlukan).
+
+config/: Folder ini bisa digunakan untuk file konfigurasi (misalnya konfigurasi database).

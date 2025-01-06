@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+aside {
+    width: 200px;
+    float: left;
+}
+
+section {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+label, input {
+    display: block;
+    margin: 10px 0;
+}
+
+input[readonly] {
+    background-color: #f1f1f1; /* Warna background untuk input yang tidak bisa diubah */
+}
+
+input.editable {
+    background-color: white; /* Warna background untuk input yang bisa diubah */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[style*="display: none"] {
+    opacity: 0.5; /* Tombol transparan saat tidak bisa ditekan */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    color: #333;
+}

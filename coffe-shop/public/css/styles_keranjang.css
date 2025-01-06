@@ -1,0 +1,410 @@
+/* reset default */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sofadi One", system-ui;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: #EACDBD   ;
+    height: 100vh;
+    color: #333;
+  }
+  
+   /* header/navbar */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  z-index: 5;
+}
+
+.header img {
+  position: relative;
+  margin-left: 10px;
+}
+
+.header {
+    transition: .3s all;
+}
+
+.header.sticky {
+    backdrop-filter: blur(60px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    height: 60px;
+}
+
+#logo {
+  margin-left: 30px; /* Atur nilai margin-left sesuai kebutuhan */
+}
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Href */
+/* Mengatur warna link normal */
+a {
+  color: inherit;  /* Warna mengikuti warna elemen induknya (default) */
+  text-decoration: none;  /* Menghilangkan garis bawah */
+}
+
+/* Mengatur warna link saat di-hover (saat kursor di atas link) */
+a:hover {
+  color: #504141;  /* Mengatur warna tetap sama saat hover */
+  text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+}
+
+/* Mengatur warna link saat ditekan atau aktif (active state) */
+a:active {
+  color: inherit;  /* Mengatur warna tetap sama saat ditekan */
+  text-decoration: none;  /* Menghilangkan garis bawah saat ditekan */
+}
+
+/* Mengatur warna link saat berada di dalam focus (misalnya setelah dipilih dengan keyboard) */
+a:focus {
+  color: inherit;  /* Mengatur warna tetap sama saat fokus */
+  text-decoration: none;  /* Menghilangkan garis bawah saat fokus */
+}
+
+
+.header ul {
+  display: flex;
+  list-style: none;
+  gap: 90px;
+}
+
+.header li {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.box {
+  padding-top: -50px;
+  text-align: justify;
+  display: flex;
+  gap: 90px;
+  margin-right: 10px;
+}
+/*btn pencarian*/
+
+/*GRUP ICON*/
+
+/* Styling untuk grup ikon (pencarian, keranjang, profil) */
+--------------------------------------------------------------------
+/* Default Style for Icons (Keranjang, Profil) */
+#keranjang-icon, #profile-icon {
+color: #000000; /* Warna default */
+transition: color 0.3s ease;
+}
+
+/* Warna ketika navbar sticky */
+.sticky #keranjang-icon, .sticky #profile-icon {
+color: white; /* Warna ketika di-scroll */
+}
+
+.icons-group {
+padding: 0px;
+display: flex;
+align-items: center; /* Menjaga elemen sejajar secara vertikal */
+gap: 50px;
+position: relative;  /* Mengaktifkan posisi relatif untuk elemen ini */
+top: -15px;
+z-index: 8; /* Pastikan grup ikon berada di atas elemen lain */
+}
+
+/* Styling untuk tombol pencarian */
+.trigger_search {
+background: transparent;
+border: 0;
+border-radius: 50%;
+width: 40px;  /* Menyelaraskan ukuran tombol dengan elemen lainnya */
+height: 40px; /* Membuat tombol berbentuk bulat dan seukuran dengan elemen lainnya */
+display: flex;
+justify-content: center;
+align-items: center;
+outline: 0;
+cursor: pointer;
+font-size: 20px; /* Ukuran ikon */
+z-index: 6;
+}
+
+/* Styling untuk input pencarian */
+.input {
+border-radius: 30px;
+border: 0;
+outline: 0;
+transition: 0.25s ease-in-out all; /* Pastikan animasi berlaku pada semua perubahan */
+width: 0;
+padding: 0;
+margin-right: -25px;
+height: 40px; /* Menyelaraskan tinggi dengan elemen lainnya */
+position: absolute; /* Menggunakan posisi absolute */
+left: 50%; /* Menyelaraskan input ke tengah secara horizontal */
+transform: translateX(-40%); /* Menyelaraskan ke tengah secara horizontal */
+}
+
+/* Ketika kolom pencarian terbuka */
+.input-open {
+width: 300px; /* Lebar kolom pencarian ketika terbuka */
+padding: 0 50px;
+margin-right: 10px;
+font-size: 20px;
+position: absolute; /* Memastikan input berada di bawah navbar */
+top: 100%; /* Menempatkan input di bawah navbar */
+left: 20%; /* Memastikan input tetap di tengah */
+transform: translateX(-50%); /* Menyelaraskan input ke tengah */
+z-index: 10; /* Memastikan input berada di atas elemen lain */
+}
+
+/* Ketika kolom pencarian ditutup (input ditutup kembali) */
+.input-close {
+width: 0; /* Kembalikan lebar menjadi 0 */
+padding: 0;
+margin-right: -25px; /* Kembalikan margin */
+font-size: 0; /* Atur font-size menjadi 0 ketika ditutup */
+top: 100%; /* Tetap berada di bawah navbar */
+left: 50%; /* Tetap di tengah */
+transform: translateX(-50%); /* Pastikan transformasi tetap konsisten */
+}
+
+/* Transisi untuk animasi yang halus */
+.input {
+transition: width 0.3s ease, top 0.3s ease, left 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Styling untuk ikon keranjang dan profil */
+/* Menghilangkan styling tombol */
+.btn-light {
+  background: transparent; /* Menghapus background */
+  border: none; /* Menghapus border */
+  padding: 0; /* Menghapus padding */
+  cursor: pointer; /* Menjaga cursor sebagai pointer */
+}
+
+/* Menghilangkan link styling */
+a.keranjang {
+  text-decoration: none; /* Menghilangkan underline pada link */
+  color: inherit; /* Menjaga warna tetap sesuai warna default (biasanya hitam) */
+}
+
+/* Styling untuk ikon keranjang */
+#keranjang-icon {
+  font-size: 24px; /* Mengatur ukuran ikon */
+  color: #000; /* Menetapkan warna ikon */
+}
+
+a.keranjang :hover {
+  /* Mengatur warna link saat di-hover (saat kursor di atas link) */
+ color: #504141;  /* Mengatur warna tetap sama saat hover */
+  text-decoration: none;  /* Menghilangkan garis bawah saat hover */
+
+
+}
+
+/* drop down button */
+.admin-container {
+display: flex;
+justify-content: center;
+padding: 10px;
+background-color: transparent;
+}
+.admin-button {
+display: flex;
+align-items: center;
+background-color: #d9b99b;
+border: 2px solid #4A3A3A;
+border-radius: 25px;
+padding: 5px 15px;
+cursor: pointer;
+}
+.admin-button span {
+margin-left: 10px;
+font-size: 14px;
+color: #000;
+}
+.admin-button .circle {
+width: 20px;
+height: 20px;
+border: 2px solid #000;
+border-radius: 50%;
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Default hidden state for the dropdown content */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #D3B8A0;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 10px;
+border-radius: 10px;
+margin-top: 10px;
+z-index: 1;
+left: -50px;
+opacity: 0;
+visibility: hidden;
+transition: opacity 1s ease-out, visibility 1s ease-out; /* Make it smooth */
+}
+
+.dropdown-content a {
+color: black;
+padding: 8px 0;
+text-decoration: none;
+display: block;
+font-size: 14px;
+}
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+/* The styles when the dropdown is shown (handled via JavaScript) */
+.dropdown.active .dropdown-content {
+display: block;
+opacity: 1;
+visibility: visible;
+}
+
+
+/* navbar end */
+
+.upper {
+  height: -10vh;
+  background: transparent;
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* main Contain */
+.sidebar {
+  width: 250px;
+  padding: 30px;
+  background-color:transparent;
+  position: fixed;
+  top: 200px;
+  left: 0;
+}
+
+.sidebar img {
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar h3 {
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.content {
+  margin-left: 300px;
+  margin-top: -45px;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  top: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4); /* Bayangan masuk ke dalam */
+}
+
+.tabs div {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tabs div.active {
+  background-color: #d1a87c;
+  border-radius: 10px;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4); /* Bayangan masuk ke dalam */
+}
+
+.order {
+  background-color: #E3C7B9;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.order img {
+  width: 50px;
+  height: 50px;
+  background-color: #413426;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.order .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order .details .info {
+  display: flex;
+  align-items: center;
+}
+
+.order .details .info h4 {
+  margin: 0;
+}
+
+.order .details .info p {
+  margin: 0;
+  color: #000;
+}
+
+.order .details .status {
+  text-align: right;
+}
+
+.order .details .status button {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* Gaya Bagian Footer */
+.footer {
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0; /* Memastikan footer berada di sisi kiri */
+}
+

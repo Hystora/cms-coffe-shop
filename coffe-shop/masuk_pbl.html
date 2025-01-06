@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL</title>
+    <link rel="stylesheet" href="public/css/masuk_pbl.css"> <!-- Menghubungkan file CSS -->
+</head>
+<body>
+    <!-- Overlay yang menutupi seluruh halaman -->
+    <div class="overlay">
+        <!-- Form container yang menampung form login -->
+        <div class="form-container">
+            <!-- Judul Halaman -->
+            <h2>Selamat Datang Kembali!</h2>
+            
+            <!-- Form untuk login -->
+            <form action="src/controllers/login.php" method="post">
+                <!-- Input untuk email -->
+                <label for="username">Email</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan alamat email anda" required>
+
+                <!-- Input untuk kata sandi -->
+                <label for="password">Kata sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan kata sandi anda" required>
+
+                <!-- Tautan untuk lupa kata sandi -->
+                <a href="lupa_katasandi.php" class="forgot-password">Lupa kata sandi?</a>
+
+                <!-- Tombol untuk masuk -->
+                <button type="submit">Masuk</button>
+
+                <!-- Tautan untuk pendaftaran jika belum punya akun -->
+                <p class="register-link">Tidak punya akun? <a href="daftar_pbl.html">Daftar sekarang</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="public/js/masuk_pbl.js"></script> <!-- Link ke file JavaScript -->
+</body>
+</html>
